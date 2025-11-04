@@ -10,7 +10,7 @@ pub fn render(frame: &mut Frame, state: &State) {
         .direction(Direction::Vertical)
         .constraints([Constraint::Length(3), Constraint::Min(0)])
         .split(frame.area());
-    let title = format!("hbt : {:.1}%", state.progress * 100.0);
+    let _title = format!("hbt : {:.1}%", state.progress * 100.0);
     let header = Paragraph::new("hbt").block(Block::default()).centered();
 
     frame.render_widget(header, chunks[0]);
