@@ -1,4 +1,4 @@
-use crate::{ui, events, state::State};
+use crate::{events, state::State, ui};
 use color_eyre::Result;
 use ratatui::DefaultTerminal;
 

@@ -1,10 +1,10 @@
 mod app;
-mod state;
 mod events;
+mod state;
 mod ui;
 
-use color_eyre::Result;
 use app::App;
+use color_eyre::Result;
 
 fn main() -> Result<()> {
     color_eyre::install()?;
