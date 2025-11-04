@@ -1,13 +1,17 @@
 use crate::state::State;
 use ratatui::{
     Frame,
-    widgets::{Block, Borders, LineGauge},
+    layout::{Constraint, Direction, Layout},
+    widgets::{Block, Paragraph},
 };
 
 pub fn render(frame: &mut Frame, state: &State) {
-    let gauge = LineGauge::default()
-        .block(Block::default().borders(Borders::ALL).title("Progress"))
-        .ratio(state.progress);
+    let chunks = Layout::default()
+        .direction(Direction::Vertical)
+        .constraints([Constraint::Length(3), Constraint::Min(0)])
+        .split(frame.area());
+    let title = format!("hbt : {:.1}%", state.progress * 100.0);
+    let header = Paragraph::new("hbt").block(Block::default()).centered();
 
-    frame.render_widget(gauge, frame.area());
+    frame.render_widget(header, chunks[0]);
 }
