@@ -11,3 +11,6 @@ crossterm = "0.28.1"
 ratatui = "0.29.0"
 color-eyre = "0.6.3"
 chrono = "0.4.42"
+serde_json = "1.0.145"
+serde = { version = "1.0.228", features = ["derive"] }
+dirs = "6.0.0"

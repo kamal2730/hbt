@@ -20,6 +20,7 @@ impl App {
             terminal.draw(|f| ui::render(f, &self.state))?;
             self.running = events::handle(&mut self.state)?;
         }
+        self.state.save();
         Ok(())
     }
 }

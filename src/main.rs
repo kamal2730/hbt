@@ -2,6 +2,7 @@ mod app;
 mod events;
 mod state;
 mod ui;
+mod terminal_util;
 
 use app::App;
 use color_eyre::Result;
