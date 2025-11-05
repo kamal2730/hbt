@@ -1,4 +1,4 @@
-use crate::state::{State, Screen};
+use crate::state::{Screen, State};
 use color_eyre::Result;
 use crossterm::event::{self, Event, KeyCode, KeyEventKind, KeyModifiers};
 

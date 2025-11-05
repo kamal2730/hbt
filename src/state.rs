@@ -1,10 +1,9 @@
-use serde::{Serialize, Deserialize};
+use serde::{Deserialize, Serialize};
 use std::collections::HashMap;
 use std::fs;
 use std::path::PathBuf;
 
-// ✅ import terminal util here (NOT inside function)
-use crate::terminal_util::{suspend_ui, resume_ui};
+use crate::terminal_util::{resume_ui, suspend_ui};
 
 #[derive(Serialize, Deserialize)]
 pub enum Screen {
@@ -70,7 +69,7 @@ impl State {
 
     pub fn enter_today_values(&mut self) {
         use chrono::Local;
-        use std::io::{stdin, stdout, Write};
+        use std::io::{Write, stdin, stdout};
 
         suspend_ui().unwrap();
 
@@ -95,7 +94,7 @@ impl State {
     }
 
     pub fn add_habit(&mut self) {
-        use std::io::{stdin, stdout, Write};
+        use std::io::{Write, stdin, stdout};
 
         suspend_ui().unwrap();
 

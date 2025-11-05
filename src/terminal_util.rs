@@ -1,8 +1,8 @@
 use crossterm::{
-    terminal::{disable_raw_mode, enable_raw_mode, LeaveAlternateScreen, EnterAlternateScreen},
     execute,
+    terminal::{EnterAlternateScreen, LeaveAlternateScreen, disable_raw_mode, enable_raw_mode},
 };
-use std::io::{stdout, Result};
+use std::io::{Result, stdout};
 
 pub fn suspend_ui() -> Result<()> {
     disable_raw_mode()?;

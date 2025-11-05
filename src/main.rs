@@ -1,8 +1,8 @@
 mod app;
 mod events;
 mod state;
-mod ui;
 mod terminal_util;
+mod ui;
 
 use app::App;
 use color_eyre::Result;

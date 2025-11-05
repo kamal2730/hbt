@@ -1,10 +1,10 @@
-use crate::state::{State, Screen};
+use crate::state::{Screen, State};
 
 use ratatui::{
     Frame,
-    widgets::{Block, Paragraph, Borders},
-    style::{Style, Color, Stylize},
     layout::{Constraint, Direction, Layout},
+    style::{Color, Style, Stylize},
+    widgets::{Block, Borders, Paragraph},
 };
 
 pub fn render(frame: &mut Frame, state: &State) {
@@ -33,15 +33,12 @@ fn draw_menu(frame: &mut Frame) {
 q: Quit
 Esc/m: Menu";
 
-    let p = Paragraph::new(text)
-        .centered()
-        .style(Color::Cyan)
-        .block(
-            Block::default()
-                .borders(Borders::ALL)
-                .title(" Menu ")
-                .title_style(Style::default().fg(Color::Yellow).bold())
-        );
+    let p = Paragraph::new(text).centered().style(Color::Cyan).block(
+        Block::default()
+            .borders(Borders::ALL)
+            .title(" Menu ")
+            .title_style(Style::default().fg(Color::Yellow).bold()),
+    );
 
     frame.render_widget(p, chunks[1]);
 }
@@ -65,8 +62,7 @@ fn draw_log(frame: &mut Frame, state: &State) {
         text.push('\n');
     }
 
-    let p = Paragraph::new(text)
-        .block(Block::default().title(" Logs ").borders(Borders::ALL));
+    let p = Paragraph::new(text).block(Block::default().title(" Logs ").borders(Borders::ALL));
 
     frame.render_widget(p, frame.area());
 }
@@ -74,7 +70,11 @@ fn draw_log(frame: &mut Frame, state: &State) {
 fn draw_settings(frame: &mut Frame) {
     let p = Paragraph::new("Adding habit...\nCheck terminal input.")
         .centered()
-        .block(Block::default().borders(Borders::ALL).title(" Habit Settings "));
+        .block(
+            Block::default()
+                .borders(Borders::ALL)
+                .title(" Habit Settings "),
+        );
 
     frame.render_widget(p, frame.area());
 }
