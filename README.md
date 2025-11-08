@@ -1,6 +1,6 @@
 # hbt
 
-###  A simple habit tracking CLI software
+###  A simple habit tracking CLI tool
 
 ### V0.01
 
